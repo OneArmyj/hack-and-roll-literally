@@ -16,7 +16,6 @@ public class EndTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) {
-            // Some function in game manager to end the game.
             gameManager.GetComponent<GameManager>().EndGame(id);
         }
     }

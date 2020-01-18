@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject player2Prefab;
 
-    public Transform startPosition1;
-    public Transform startPosition2;
+    public GameObject startPoint1;
+    public GameObject startPoint2;
 
     private GameObject player1;
     private GameObject player2;
@@ -46,8 +46,8 @@ public class GameManager : MonoBehaviour
 
     void InitialisePlayers()
     {
-        player1 = Instantiate(player1Prefab, startPosition1);
-        player2 = Instantiate(player2Prefab, startPosition2);
+        player1 = Instantiate(player1Prefab, startPoint1.transform.position, Quaternion.identity);
+        player2 = Instantiate(player2Prefab, startPoint2.transform.position, Quaternion.identity);
     }
 
     void StartCountdown()
