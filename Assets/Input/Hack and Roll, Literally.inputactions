@@ -38,9 +38,33 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Attack",
+                    "name": "1P Attack1",
+                    "type": "Button",
+                    "id": "b7e7d402-a7fe-4a9a-828d-0dcb0776c5c0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "2P Attack1",
+                    "type": "Button",
+                    "id": "d69c84a9-bba0-4cd0-a026-21b0fa85215d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "1P Attack2",
                     "type": "Button",
                     "id": "b5e51e5d-b8fb-47a3-b3f0-adbcac9207d0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "2P Attack2",
+                    "type": "Button",
+                    "id": "bd5a0c35-9cca-4ad0-b515-20b5b3a7da2d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -134,6 +158,160 @@
                     "action": "2P Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Right + Attack",
+                    "id": "ede1fb00-2b7a-4929-9e8d-80680a9bcc05",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1P Attack2",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "f0788d36-9046-46e9-8201-648044b5db55",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1P Attack2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "button",
+                    "id": "459328f7-7fd5-4446-ae77-11dbde831373",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1P Attack2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left + Attack",
+                    "id": "493e3a85-2b7f-44f2-b773-d5dfb0918ff3",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1P Attack2",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "e44583b4-36b9-4e7c-86cb-1cd536b79280",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1P Attack2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "button",
+                    "id": "36aabca1-4a67-46d4-bf3c-3062fb9c7722",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1P Attack2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "b75e82d6-63e5-4270-9d56-615c0589858a",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "1P Attack1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b29a2e3d-8fa3-4f6b-a1ca-99fe0870d199",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2P Attack1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Right + Attack",
+                    "id": "0d3b7a63-9409-414f-9e9c-5ffd3d25b420",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2P Attack2",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "02cf9bc0-0789-47e6-8954-85d662a1033e",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2P Attack2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "button",
+                    "id": "99430ab5-97a2-432f-b43f-42ce0ae6b181",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2P Attack2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left + Attack",
+                    "id": "fa3a882f-7e15-49c3-bad1-e6fde281d854",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2P Attack2",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "42ddfeb9-29f0-4227-84ee-255b2df11099",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2P Attack2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "button",
+                    "id": "e23c5599-335c-4235-99b4-4df3196481c5",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2P Attack2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },
