@@ -6,6 +6,12 @@ public class Spawn : MonoBehaviour
 {
     void SpawnPlayer(GameObject gameObject)
     {
-        Instantiate(gameObject, transform);
+        StartCoroutine(Respawn(gameObject));
+    }
+
+    IEnumerator Respawn(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(5);
+        Instantiate(gameObject, transform.position, Quaternion.identity);
     }
 }

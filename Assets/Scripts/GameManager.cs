@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -77,7 +78,15 @@ public class GameManager : MonoBehaviour
             throw new System.Exception("Error, neither player1 or 2 won.");
         }
 
+        StartCoroutine(ExitGame());
+    }
+
+    IEnumerator ExitGame()
+    {
+        yield return new WaitForSeconds(3);
+
         // change scene back to before game start
+        SceneManager.LoadScene("Start Menu");
     }
 
 }
