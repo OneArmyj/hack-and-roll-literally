@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [HideInInspector]
+    public PlayerControls m_PlayerControls;
+
     [SerializeField]
     private float m_Torque = 7;
     [SerializeField]
@@ -23,19 +26,54 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject m_GroundCheck;
 
+    private bool m_Hit;
+    private float m_TimeLastHit;
     private float m_MoveDirection;
     private Vector3 m_JumpVelocity;
     // 0 = not jumping, 1 = should jump, 2 = jumped
     private int m_JumpState = 0;
     private bool m_Attached = true;
 
+    void Awake()
+    {
+        m_PlayerControls = GetComponent<PlayerControls>();
+        m_PlayerControls.m_MoveAction.performed += ctx => {
+            m_MoveDirection = ctx.ReadValue<float>();
+        };
+        m_PlayerControls.m_JumpAction.performed += ctx => {
+            if (m_JumpState == 0)
+                m_JumpState = 1;
+        };
+    }
+
     void Update()
     {
+        if (m_Hit && Time.time > m_TimeLastHit + 0.3f)
+            m_Hit = false;
+
+        if (!m_Hit)
+            CheckMovementPressed();
+
+        CheckJumpPressed();
+
         HandleJump();
         HandleMove();
     }
 
-    public void HandleJump()
+    void CheckMovementPressed()
+    {
+        m_MoveDirection = m_PlayerControls.m_MoveAction.ReadValue<float>();
+    }
+
+    void CheckJumpPressed()
+    {
+        if (m_PlayerControls.m_JumpAction.triggered && m_JumpState == 0)
+        {
+            m_JumpState = 1;
+        }
+    }
+
+    void HandleJump()
     {
         if (m_JumpState == 1)
         {
@@ -78,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void HandleMove()
+    void HandleMove()
     {
         if (m_Attached)
         {
@@ -95,19 +133,36 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public bool CheckIfGrounded()
+    bool CheckIfGrounded()
     {
         return m_GroundCheck.transform.position.y < 0.01f;
     }
 
-    public void OnMove(InputAction.CallbackContext context)
+    public void OnHit(int direction)
     {
-        m_MoveDirection = context.ReadValue<float>();
+        if (m_Attached)
+        {
+            Vector2 force = new Vector2(direction * 3, 0);
+            m_MoveDirection = 0;
+            m_Rigidbody.AddForce(force, ForceMode2D.Impulse);
+            m_PlayerCharacter.transform.position = m_PlayerBall.transform.position + new Vector3(0, 1, 0);
+        }
+        else
+        {
+            m_MoveDirection = direction;
+        }
+        m_Hit = true;
+        m_TimeLastHit = Time.time;
     }
 
-    public void OnJump(InputAction.CallbackContext context)
+    void OnEnable()
     {
-        if (m_JumpState == 0)
-            m_JumpState = 1;
+        m_PlayerControls.m_MoveAction.Enable();
+        m_PlayerControls.m_JumpAction.Enable();
+    }
+
+    void OnDisable() {
+        m_PlayerControls.m_MoveAction.Disable();
+        m_PlayerControls.m_JumpAction.Disable();
     }
 }
