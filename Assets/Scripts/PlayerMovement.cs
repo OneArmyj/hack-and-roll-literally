@@ -150,10 +150,10 @@ public class PlayerMovement : MonoBehaviour
             m_Rigidbody.AddForce(force, ForceMode2D.Impulse);
             m_PlayerCharacter.transform.position = m_PlayerBall.transform.position + new Vector3(0, 1, 0);
         }
-        else
-        {
-            m_MoveDirection = direction;
-        }
+
+        m_Attached = false;
+        m_JumpState = 1;
+        m_MoveDirection = direction;
         m_Hit = true;
         m_TimeLastHit = Time.time;
     }
