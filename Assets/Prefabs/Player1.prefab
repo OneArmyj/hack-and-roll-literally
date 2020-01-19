@@ -237,7 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerControls: {fileID: 0}
-  m_Torque: 50
+  m_Id: 1
+  m_Torque: 200
   m_MaxAngularVelocity: 200
   m_MoveSpeed: 3
   m_JumpSpeed: 5
@@ -650,7 +651,7 @@ SpriteRenderer:
   m_Size: {x: 1.24, y: 1.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &5240125477175328061
@@ -663,7 +664,7 @@ Animator:
   m_GameObject: {fileID: 8666689092900573053}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fe6ee0ec85a3d894a9a82b04e562e069, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

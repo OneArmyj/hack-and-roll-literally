@@ -11,8 +11,17 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject player2Prefab;
 
-    public GameObject startPoint1;
-    public GameObject startPoint2;
+    [SerializeField]
+    private Transform startPoint1;
+
+    [SerializeField]
+    private Transform startPoint2;
+
+    [SerializeField]
+    private Transform endPoint1;
+
+    [SerializeField]
+    private Transform endPoint2;
 
     [HideInInspector]
     public GameObject player1;
@@ -21,10 +30,10 @@ public class GameManager : MonoBehaviour
     public GameObject player2;
 
     [SerializeField]
-    private GameObject spawnPoint1;
+    private Transform spawnPoint1;
 
     [SerializeField]
-    private GameObject spawnPoint2;
+    private Transform spawnPoint2;
 
     public float countdownDuration;
 
@@ -50,8 +59,8 @@ public class GameManager : MonoBehaviour
 
     void InitialisePlayers()
     {
-        player1 = Instantiate(player1Prefab, startPoint1.transform.position, Quaternion.identity);
-        player2 = Instantiate(player2Prefab, startPoint2.transform.position, Quaternion.identity);
+        player1 = Instantiate(player1Prefab, startPoint1.position, Quaternion.identity);
+        player2 = Instantiate(player2Prefab, startPoint2.position, Quaternion.identity);
     }
 
     void StartCountdown()
@@ -96,10 +105,10 @@ public class GameManager : MonoBehaviour
     {
         if (id == 1)
         {
-            spawnPoint1.GetComponent<Spawn>().SpawnPlayer(player1Prefab, obj => player1 = obj);
+            spawnPoint1.GetComponent<Spawn>().SpawnPlayer(player1Prefab, obj => player1 = obj, endPoint1, endPoint2, -22);
         } else if (id == 2)
         {
-            spawnPoint2.GetComponent<Spawn>().SpawnPlayer(player2Prefab, obj => player2 = obj);
+            spawnPoint2.GetComponent<Spawn>().SpawnPlayer(player2Prefab, obj => player2 = obj, endPoint1, endPoint2, 22);
         } else
         {
             Debug.Log("Respawn error.");
