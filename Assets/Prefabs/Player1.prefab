@@ -238,8 +238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerControls: {fileID: 0}
   m_Id: 1
-  m_Torque: 200
-  m_MaxAngularVelocity: 200
+  m_Torque: 250
+  m_MaxAngularVelocity: 400
   m_MoveSpeed: 3
   m_JumpSpeed: 5
   m_Rigidbody: {fileID: 1081990841283424925}

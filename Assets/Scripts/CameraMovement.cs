@@ -41,6 +41,15 @@ public class CameraMovement : MonoBehaviour
         background.localScale = new Vector3(Camera.main.orthographicSize / 5, Camera.main.orthographicSize / 5, 1);
 
         Camera.main.transform.position += new Vector3(finalX - Camera.main.transform.position.x, 0, 0) * Time.deltaTime;
+        if (Camera.main.transform.position.x - Camera.main.orthographicSize < gm.endPoint2.position.x - 1)
+        {
+            Camera.main.transform.position = new Vector3(gm.endPoint2.position.x - 1 + Camera.main.orthographicSize, Camera.main.transform.position.y, Camera.main.transform.position.z);
+        }
+        else if (Camera.main.transform.position.x + Camera.main.orthographicSize > gm.endPoint1.position.x + 1)
+        {
+            Camera.main.transform.position = new Vector3(gm.endPoint1.position.x + 1 - Camera.main.orthographicSize, Camera.main.transform.position.y, Camera.main.transform.position.z);
+        }
+
         background.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, background.position.z);
         if (Camera.main.orthographicSize > 10)
         {

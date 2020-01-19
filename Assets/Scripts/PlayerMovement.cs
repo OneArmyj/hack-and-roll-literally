@@ -160,6 +160,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator OnDie()
     {
         OnDisable();
+        m_Rigidbody.simulated = false;
         yield return new WaitForSeconds(2);
         FindObjectOfType<GameManager>().RespawnPlayer(m_Id);
         Destroy(gameObject);

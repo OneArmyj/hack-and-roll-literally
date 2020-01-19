@@ -17,11 +17,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Transform startPoint2;
 
-    [SerializeField]
-    private Transform endPoint1;
+    [HideInInspector]
+    public Transform endPoint1;
 
-    [SerializeField]
-    private Transform endPoint2;
+    [HideInInspector]
+    public Transform endPoint2;
 
     [HideInInspector]
     public GameObject player1;
