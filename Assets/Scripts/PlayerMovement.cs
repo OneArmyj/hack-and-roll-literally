@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     [HideInInspector]
     public PlayerControls m_PlayerControls;
 
+    [SerializeField]
+    private int m_Id = 1;
     [SerializeField]
     private float m_Torque = 7;
     [SerializeField]
@@ -111,6 +112,7 @@ public class PlayerMovement : MonoBehaviour
                 else
                 {
                     m_JumpState = 0;
+                    StartCoroutine(OnDie());
                 }
             }
         }
@@ -153,6 +155,14 @@ public class PlayerMovement : MonoBehaviour
         }
         m_Hit = true;
         m_TimeLastHit = Time.time;
+    }
+
+    IEnumerator OnDie()
+    {
+        OnDisable();
+        yield return new WaitForSeconds(2);
+        FindObjectOfType<GameManager>().RespawnPlayer(m_Id);
+        Destroy(gameObject);
     }
 
     void OnEnable()

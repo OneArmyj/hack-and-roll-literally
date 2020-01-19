@@ -297,6 +297,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!114 &320671141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +413,8 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &386856820
 GameObject:
   m_ObjectHideFlags: 0

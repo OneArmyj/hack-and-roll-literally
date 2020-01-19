@@ -14,8 +14,11 @@ public class GameManager : MonoBehaviour
     public GameObject startPoint1;
     public GameObject startPoint2;
 
-    private GameObject player1;
-    private GameObject player2;
+    [HideInInspector]
+    public GameObject player1;
+
+    [HideInInspector]
+    public GameObject player2;
 
     [SerializeField]
     private GameObject spawnPoint1;
@@ -87,6 +90,20 @@ public class GameManager : MonoBehaviour
 
         // change scene back to before game start
         SceneManager.LoadScene("Start Menu");
+    }
+
+    public void RespawnPlayer(int id)
+    {
+        if (id == 1)
+        {
+            spawnPoint1.GetComponent<Spawn>().SpawnPlayer(player1Prefab, obj => player1 = obj);
+        } else if (id == 2)
+        {
+            spawnPoint2.GetComponent<Spawn>().SpawnPlayer(player2Prefab, obj => player2 = obj);
+        } else
+        {
+            Debug.Log("Respawn error.");
+        }
     }
 
 }

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    void SpawnPlayer(GameObject gameObject)
+    public void SpawnPlayer(GameObject gameObject, System.Action<GameObject> action)
     {
-        StartCoroutine(Respawn(gameObject));
+        StartCoroutine(Respawn(gameObject, action));
     }
 
-    IEnumerator Respawn(GameObject gameObject)
+    IEnumerator Respawn(GameObject gameObject, System.Action<GameObject> action)
     {
         yield return new WaitForSeconds(5);
-        Instantiate(gameObject, transform.position, Quaternion.identity);
+        GameObject player = Instantiate(gameObject, transform.position, Quaternion.identity);
+        action(player);
     }
 }
