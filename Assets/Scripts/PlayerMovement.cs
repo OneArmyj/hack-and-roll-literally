@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     [HideInInspector]
     public PlayerControls m_PlayerControls;
 
