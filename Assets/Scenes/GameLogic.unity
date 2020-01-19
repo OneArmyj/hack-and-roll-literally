@@ -556,6 +556,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: a210697c-750e-4bd6-81ce-3225e2b5bcb8
     m_ActionName: UI/TrackedDeviceSelect
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b7e7d402-a7fe-4a9a-828d-0dcb0776c5c0
+    m_ActionName: Player/1P Attack1[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d69c84a9-bba0-4cd0-a026-21b0fa85215d
+    m_ActionName: Player/2P Attack1[/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bd5a0c35-9cca-4ad0-b515-20b5b3a7da2d
+    m_ActionName: Player/2P Attack2[/Keyboard/rightArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/downArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
